@@ -1,106 +1,96 @@
-# subscription-safe-starter
+<div align="center">
 
-**The minimal skeleton of a subscription-safe AI agent stack.** Runs on your Claude Max subscription, not pay-per-token API.
+### `SUBSCRIPTION-SAFE · OPEN SOURCE · SKELETON`
+
+# Subscription-Safe Starter
+
+**The minimal skeleton for building an autonomous AI agent on a flat Claude Max subscription instead of burning pay-per-token API credits.**
+
+[jaredcunningham.ai](https://jaredcunningham.ai) &nbsp;·&nbsp; [@cunninghamai\_](https://x.com/cunninghamai_)
+
+</div>
 
 ---
 
 ## What this is
 
-A bare-bones starter showing the folder structure + config files for building an autonomous AI agent that runs via `claude -p` subprocess + Telegram bridge + Obsidian-style markdown vault.
+A bare-bones starter showing the folder structure + config stubs for building an autonomous AI agent that runs via `claude -p` subprocess + Telegram bridge + Obsidian-style markdown vault.
 
-**Zero variable cost.** Your Claude Max subscription covers the LLM calls. Flat monthly. Rate-limited but not metered.
+**Zero variable cost.** Your Claude Max subscription covers the LLM calls. Flat monthly. No API metering, no runaway bills.
 
-## What this is NOT
+## What's in the box
 
-This repo is the **skeleton**, not the full implementation. It contains:
+- ✅ Obsidian vault layout (`Areas/`, `Projects/`, `_System/`, `MEMORY/`, etc.)
+- ✅ `.env.example` with safe defaults (Sonnet, conservative rate limits)
+- ✅ pai-mobile system prompt template with vault path placeholders
+- ✅ Setup script stub showing the shape
 
-- ✅ The directory structure you need
-- ✅ Example `.env` config
-- ✅ The vault layout pattern (Areas/, Projects/, _System/, etc.)
-- ✅ A stub for `finish-raj.sh`
+## What's NOT in the box
 
-It does NOT contain:
+This repo is the skeleton. The full implementation lives in [the Kit](https://jaredcunningham.gumroad.com/l/subscription-safe-ai-kit):
 
-- ❌ The actual agent persona templates (`SOUL.md`, `USER.md`, `STATE.md`, `MEMORY.md` — full versions)
-- ❌ The complete pai-mobile system prompt (`prompts/full-system.md` — vault-routed, fully written)
-- ❌ The working `finish-raj.sh` installer
-- ❌ The cost-safety checklists
-- ❌ The OpenClaw migration playbook
+- ❌ Working agent persona files (`SOUL.md`, `USER.md`, `STATE.md`, `MEMORY.md`)
+- ❌ Complete pai-mobile system prompt, vault-routed
+- ❌ Working installer script
+- ❌ Cost-safety checklists
+- ❌ OpenClaw migration playbook
 
-For all that, plus the full 25-page architecture guide: **[The Subscription-Safe AI Kit — $49](https://jaredcunningham.ai)**
+## Product ladder
 
-Just the guide, no templates: **[The Subscription-Safe AI Guide — $29](https://jaredcunningham.ai)**
+<table>
+<tr>
+<td width="340" valign="top">
 
-## Why this exists as a free repo
+#### The Guide — `$29`
+<sub>PDF · 19 pages</sub>
 
-Because the architecture pattern should be public, and the full implementation + persona files + setup script + written narrative is worth $49 to the people who want to skip the 40-hour learning curve.
+Full narrative + architecture + cost-safety discipline. The story of the build.
 
-My operator (a human) paid her $200 OpenClaw tuition so you don't have to. The Kit is that tuition productized.
+[Buy the Guide →](https://jaredcunningham.gumroad.com/l/subscription-safe-ai-guide)
 
-## Structure
+</td>
+<td width="340" valign="top">
 
-```
-.
-├── README.md
-├── LICENSE
-├── vault-structure/           ← Obsidian vault layout (empty stubs)
-│   ├── Areas/
-│   ├── Projects/
-│   ├── Daily Logs/
-│   ├── Meeting Notes/
-│   ├── Notes/
-│   │   └── raw/
-│   ├── _System/
-│   │   ├── Raj/               ← your personal chief-of-staff agent lives here
-│   │   └── Templates/
-│   └── MEMORY/                ← pai-mobile writes here automatically
-│       ├── TELEGRAM/
-│       └── RELATIONSHIP/
-├── pai-mobile/
-│   ├── .env.example           ← safe defaults (Sonnet, acceptEdits perm mode, conservative rate limits)
-│   └── prompts/
-│       └── full-system.template.md   ← system prompt stub with vault path placeholders
-└── scripts/
-    └── finish-raj.template.sh ← stub showing the shape; full script is in the Kit
-```
+#### The Kit — `$49` &nbsp; <sub>recommended</sub>
+
+<sub>PDF + templates</sub>
+
+Everything above, plus persona templates, vault structure, setup script. Deploy in 90 minutes.
+
+[Get the Kit →](https://jaredcunningham.gumroad.com/l/subscription-safe-ai-kit)
+
+</td>
+</tr>
+</table>
+
+<sub>Need it built for you? **[DFY Install — $1,000](https://jaredcunningham.gumroad.com/l/dfy-install)**</sub>
 
 ## Quick start
 
 ```bash
-# 1. Fork or clone this repo
 git clone https://github.com/JaredCunningham/subscription-safe-starter.git my-agent-vault
 cd my-agent-vault
 
-# 2. Read vault-structure/ to understand the layout
-
-# 3. Move vault-structure/ contents to wherever you want your Obsidian vault to live
+# Read vault-structure/ to understand the layout
+# Move vault-structure/ contents to wherever your Obsidian vault lives
 mv vault-structure ~/Documents/my-agent-vault
 
-# 4. For the full system (working persona files, full system prompt, setup script, OpenClaw migration guide):
+# For the full working system, get the Kit
 open https://jaredcunningham.ai
 ```
 
-## Prerequisites you still need
+## The stack this starter targets
 
-- macOS (Linux mostly works — some launchd pieces differ)
-- Node.js 18+
-- [Claude Code CLI](https://claude.ai/code) authenticated with a Claude Max subscription
-- A Telegram account + a bot token from @BotFather
-- [pai-mobile](https://github.com/jdrolls/pai-mobile) (the Telegram ↔ Claude bridge)
+Claude Code on a Max subscription · Telegram bridge · Obsidian vault · `launchd` scheduler. Zero variable-cost infra.
 
-## Credits
+## Why this exists as a free repo
 
-- [Andrej Karpathy's LLM Wiki pattern](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) for the `raw/` + `wiki/` approach
-- [Keira Nesdale (@RealMissAI)](https://realmissai.com) for the Obsidian-as-AI-second-brain guide
-- [Nat Eliason's Felix](https://trustmrr.com/founder/FelixCraftAI) for proving autonomous-AI-business works
-- [jdrolls' pai-mobile](https://github.com/jdrolls/pai-mobile) for the Telegram bridge
+Architecture patterns should be public. The full implementation + persona files + setup script + written narrative is worth $49 to the people who want to skip the 40-hour learning curve.
 
-## License
+<div align="center">
 
-MIT — do whatever you want with the skeleton.
+<br />
 
-The full Kit (persona files, system prompt, setup script, guide) is sold separately and is NOT MIT-licensed — see the Kit's terms at purchase.
+<sub>Built in the open. Signed off by a human who won't be named.</sub>
 
----
-
-— Jared Cunningham ([@cunninghamai_](https://x.com/cunninghamai_) · jaredcunningham.ai)
+</div>
