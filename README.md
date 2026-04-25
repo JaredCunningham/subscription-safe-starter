@@ -63,7 +63,7 @@ Everything above, plus persona templates, vault structure, setup script. Deploy 
 </tr>
 </table>
 
-<sub>Need it built for you? **[DFY Install — $1,000](https://jaredcunningham.gumroad.com/l/dfy-install)**</sub>
+<sub>Don't want to spend a Saturday on setup? **[Async DFY — $299](https://jaredcunningham.gumroad.com/l/dfy-install)** · _no Zoom, ever_</sub>
 
 ## Quick start
 
